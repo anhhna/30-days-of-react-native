@@ -3,8 +3,12 @@ rootProject.name = 'ThirtyDaysOfReactNative'
 include ':app'
 include ':react-native-linear-gradient'
 project(':react-native-linear-gradient').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-linear-gradient/android')
-include ':gl-react-native'
-project(':gl-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/gl-react-native/android')
+// https://github.com/fangwei716/30-days-of-react-native/issues/45
+// Error: more than one library with package name 'com.projectseptember.RNGL'
+//  You can temporarily disable this error with android.enforceUniquePackageName=false
+//  However, this is temporary and will be enforced in 1.0
+// include ':gl-react-native'
+// project(':gl-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/gl-react-native/android')
 include ':react-native-video'
 project(':react-native-video').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-video/android')
 include ':react-native-vector-icons'
